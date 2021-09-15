@@ -44,13 +44,13 @@ class Config(metaclass=Singleton):
 
         ## no need to modify these
         if "BOT_URL" not in self.config or not self.config["BOT_URL"]:
-            self.config["BOT_URL"] = "https://t.me/vcplayerbot"
+            self.config["BOT_URL"] = "https://t.me/Zer0ByteMusic_0bot"
         if "PARENT_URL" not in self.config or not self.config["PARENT_URL"]:
-            self.config["PARENT_URL"] = "https://t.me/sktechhub"
+            self.config["PARENT_URL"] = "https://t.me/Zer0ByteOfficial"
         if "SUPPORT_GROUP" not in self.config or not self.config["SUPPORT_GROUP"]:
-            self.config["SUPPORT_GROUP"] = "https://t.me/voicechatsupport"
+            self.config["SUPPORT_GROUP"] = "https://t.me/Beluga_chat"
         if "GITHUB_REPO" not in self.config or not self.config["GITHUB_REPO"]:
-            self.config["GITHUB_REPO"] = "https://github.com/kshubham506/vcplayerbot"
+            self.config["GITHUB_REPO"] = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
         """
         The below values you can specify as env variables or modify here directly
