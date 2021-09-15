@@ -87,7 +87,7 @@ class GroupCallInstance(object):
             if fetching_media_msg is not None:
                 await delete_message(fetching_media_msg)
             m = await send_message(
-                self.bot_client, self.chat_id, f"__🖼 Generating Thumbnail__"
+                self.bot_client, self.chat_id, f"__Proccessing...__"
             )
             cover_file_name = None
             if (
@@ -108,7 +108,7 @@ class GroupCallInstance(object):
             if config.get("PLAYBACK_FOOTER"):
                 footer = f"{config.get('PLAYBACK_FOOTER')}".replace("\\n", "\n")
             footer_val = (
-                footer if footer else "For any issues contact @voicechatsupport"
+                footer if footer else "For any issues contact @Zer0ByteOfficial"
             )
             if songInfo["requested_by"].get("group_username"):
                 footer_val = f"[Click Here](https://t.me/{songInfo['requested_by']['group_username']}?voicechat) to join voice chat and listen/video media.\n{footer_val}"
@@ -118,7 +118,7 @@ class GroupCallInstance(object):
                 logInfo(
                     f"Sending cover mesage in chat : {self.chat_id} : {cover_file_name}"
                 )
-                caption = f"**{'📹' if songInfo['is_video'] is True else '🎧'} Name:** `{(songInfo['title'].strip())[:20]}`\n**⏱ Duration:** `{songInfo['duration']}` | **📺 Res:** `{songInfo['resolution']}`\n**💡 Requester:** {req_by}\n\n{footer_val}"
+                caption = f"**{'📹' if songInfo['is_video'] is True else '🎵'} Name:** `{(songInfo['title'].strip())[:20]}`\n**🕗 Duration:** `{songInfo['duration']}` | **🎞 Res:** `{songInfo['resolution']}`\n**👤 Requested by:** {req_by}\n\n{footer_val}"
                 await send_photo(
                     client=self.bot_client,
                     chat_id=self.chat_id,
@@ -132,7 +132,7 @@ class GroupCallInstance(object):
             else:
                 await send_message(
                     self.chat_id,
-                    f"**✅ Playing Now **\n\n**🎧 Name:** `{(songInfo['title'].strip())[:20]}`\n**⏱ Duration:** `{songInfo['duration']}`\n**💡 Requester:** {req_by}\n\n{footer_val}",
+                    f"**🎵 Playing Now **\n\n**🎵 Name:** `{(songInfo['title'].strip())[:20]}`\n**🕗 Duration:** `{songInfo['duration']}`\n**👤 Requested by:** {req_by}\n\n{footer_val}",
                 )
                 return
         except Exception as ex:
@@ -258,7 +258,7 @@ class GroupCallInstance(object):
             if queues.is_empty(self.chat_id) is True:
                 if user_requested is False:
                     return await self.stop_playback()
-                resp_msg = f"🛑 __There is no media waiting in queue, If you want to stop send /stop.__"
+                resp_msg = f" __There is no media waiting in queue, If you want to stop send /stop.__"
             else:
                 new_media = queues.get(self.chat_id)
                 await self.start_playback(new_media["songInfo"])
@@ -293,9 +293,9 @@ class GroupCallInstance(object):
                 )
 
             if send_reason_msg is True:
-                resp_msg = f"**Playback ended `[If you were in middle of a song and you are getting this message then this has happended due to a deployement. You can play again after some time.]`**\n\n__Thank you for trying and do give your feedback/suggestion @sktechhub_chat.__"
+                resp_msg = f"**Playback ended `[If you were in middle of a song and you are getting this message then this has happended due to a deployement. You can play again after some time.]`**\n\n__Thank you for trying and do give your feedback/suggestion @Zer0ByteOfficial.__"
             else:
-                resp_msg = f"__Playback ended, do give your feedback/suggestion @voicechatsupport.__"
+                resp_msg = f"__Playback ended, do give your feedback/suggestion @Zer0ByteOfficial.__"
 
         except BotMethodInvalid as bi:
             self.logWarn(f"Expected error while stopping the playback : {bi}")
@@ -342,7 +342,7 @@ class MusicPlayer(metaclass=Singleton):
             self.cleanTheGroupCallDict()
             return (
                 self.group_calls.get(chat_id),
-                f"🤭 __Please play a media first before performing this action.__",
+                f"__Please play a media first before performing this action.__",
             )
         except Exception as ex:
             logException(f"Error in getGroupCallInstance {ex}")
