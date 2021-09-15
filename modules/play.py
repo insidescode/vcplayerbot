@@ -17,7 +17,7 @@ import uuid
 
 
 @Client.on_message(
-    filters.command(["play", "play@vcplayerbot"])
+    filters.command(["play", "play@Zer0ByteMusic_0bot"])
     & ~filters.edited
     & ~filters.bot
     & ~filters.private
@@ -37,7 +37,7 @@ async def play(client: Client, message, current_client):
             await send_message(
                 client,
                 current_chat.id,
-                f"__Please provide a media url or name.\nFor instance → **/play summer of 69**__",
+                f"__Please provide a media url or name.\nFor instance → **/play fake lauv**__",
             )
             return
 
@@ -50,7 +50,7 @@ async def play(client: Client, message, current_client):
         sent_msg = await send_message(
             client,
             current_chat.id,
-            f"__👀 Fetching {'video' if parsed_command['is_video'] is True else 'audio'} details... __",
+            f"__Fetching {'video' if parsed_command['is_video'] is True else 'audio'} details... __",
         )
         if parsed_command["is_youtube"] is True:
             songDetails = await VideoSearch(
@@ -88,7 +88,7 @@ async def play(client: Client, message, current_client):
             if song_info["duration"] and song_info["duration"] > int(max_duration):
                 await edit_message(
                     sent_msg,
-                    f"__😢 The specified song is too long, Please use a song with less than {max_duration} sec duration.__",
+                    f"__The specified song is too long, Please use a song with less than {max_duration} sec duration.__",
                 )
                 return
             song_info["is_repeat"] = parsed_command["is_repeat"]
@@ -99,7 +99,7 @@ async def play(client: Client, message, current_client):
             await gc_instance.add_to_queue(song_info, sent_msg)
         else:
             await edit_message(
-                sent_msg, f"__😢 Unable to find the required song, Please try again.__"
+                sent_msg, f"__Unable to find the required song, Please try again.__"
             )
 
     except Exception as ex:
