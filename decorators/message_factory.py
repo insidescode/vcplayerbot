@@ -12,10 +12,10 @@ def getMessage(message, action, errorMsg=""):
             "-lipsync": "Use this if audio is not in sync with video",
         }
         if action == "start-private-message":
-            send_message = f"**Hi 🎵 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}**"
+            send_message = f"**Hi 👋 {message.chat.first_name if hasattr(message.chat, 'first_name') else 'User'}**"
             send_message = (
                 send_message
-                + f"\n\n**[Voice Chat Music Player]({config.get('BOT_URL')})** is a [SkTechHub Product]({config.get('PARENT_URL')})."
+                + f"\n\n**[AUTUMN]({config.get('BOT_URL')})** is a [Zer0Byte Product](https://t.me/Zer0ByteOfficial)."
             )
             send_message = (
                 send_message
@@ -23,14 +23,14 @@ def getMessage(message, action, errorMsg=""):
             )
             send_message = (
                 send_message
-                + f"\n\n**So why wait 🌀 add the bot to a group and get started 🎧**\n\n**Source Code :** [Repository]({config.get('GITHUB_REPO')})"
+                + f"\n\n**So why wait add the bot to a group and get started**\n\n**Source Code :** [Repository](https://t.me/Beluga_chat)"
             )
             return send_message, getReplyKeyBoard(message, action)
         elif action == "start-group-message":
-            send_message = f"**Thank you for adding [Voice Chat Music Player]({config.get('BOT_URL')})🎵**"
+            send_message = f"**Thank you for adding [Autumn]({config.get('BOT_URL')})🎵**"
             send_message = (
                 send_message
-                + f"\n\n**[Voice Chat Music Player]({config.get('BOT_URL')})** is a [SkTechHub Product]({config.get('PARENT_URL')})."
+                + f"\n\n**[Autumn]({config.get('BOT_URL')})** is a [Zer0Byte Product](https://t.me/Zer0ByteOfficial)."
             )
             send_message = (
                 send_message
@@ -57,10 +57,10 @@ def getMessage(message, action, errorMsg=""):
             return send_message, getReplyKeyBoard(message, "start-group-message")
 
         elif action == "help-private-message":
-            send_message = f"**VoiceChat Music Player**\n**Source Code :** [Repository]({config.get('GITHUB_REPO')})"
+            send_message = f"**Autumn**\n**Source Code :** [Repository](https://t.me/Zer0ByteOfficial)"
             send_message = (
                 send_message
-                + f"\n\n**[Voice Chat Music Player]({config.get('BOT_URL')})** is a [SkTechHub Product]({config.get('PARENT_URL')})."
+                + f"\n\n**[Autumn](https://t.me/Zer0ByteOfficial)** is a [Zer0Byte Product](https://t.me/Zer0ByteOfficial)."
             )
             send_message = send_message + f"\n\n__**Available Commands**__"
             send_message = (
@@ -92,15 +92,15 @@ def getMessage(message, action, errorMsg=""):
                     + f"__• Send `help` in the group/channel to view the playback commands.__"
                 )
             send_message = (
-                send_message + f"\n\n**__For any issues contact @voicechatsupport__**"
+                send_message + f"\n\n**__For any issues contact @Zer0byteOfficial__**"
             )
             return send_message, getReplyKeyBoard(message, action)
 
         elif action == "help-group-message":
-            send_message = f"**VoiceChat Music Player**\n**Source Code :** [Repository]({config.get('GITHUB_REPO')})"
+            send_message = f"**Autumn**\n**Source Code :** [Repository](https://t.me/Zer0ByteOfficial)"
             send_message = (
                 send_message
-                + f"\n\n**[Voice Chat Music Player]({config.get('BOT_URL')})** is a [SkTechHub Product]({config.get('PARENT_URL')})."
+                + f"\n\n**[Autumn]({config.get('BOT_URL')})** is a [Zer0Byte Product](https://t.me/Zer0ByteOfficial)."
             )
             send_message = send_message + f"\n\n__**Available Commands**__"
             send_message = (
@@ -133,14 +133,14 @@ def getMessage(message, action, errorMsg=""):
             return send_message, getReplyKeyBoard(message, action)
 
         elif action == "chat-not-allowed":
-            send_message = f"**😖 Sorry but this chat is not yet allowed to access the service. You can always check the demo in [Support Group]({config.get('SUPPORT_GROUP')}).**"
+            send_message = f"**😖 Sorry but this chat is not yet allowed to access the service. You can always check the demo in [Support Group](https://t.me/Beluga_chat).**"
             send_message = (
                 send_message
-                + f"\n\n**Why ❓**\n- __Due to high usage we have restricted the usage of the bot in just our [Support Group]({config.get('SUPPORT_GROUP')}) __"
+                + f"\n\n**Why ❓**\n- __Due to high usage we have restricted the usage of the bot in just our [Support Group](https://t.me/Beluga_chat) __"
             )
             send_message = (
                 send_message
-                + f"\n- __Join the [Support Group]({config.get('SUPPORT_GROUP')}) to access the bot or deploy your own bot __ **Source Code :** [Github]({config.get('GITHUB_REPO')})"
+                + f"\n- __Join the [Support Group](https://t.me/Zer0ByteOfficial) to access the bot or deploy your own bot __ **Source Code :** [Github](https://t.me/Zer0ByteOfficial)"
             )
 
             return send_message, getReplyKeyBoard(message, action)
@@ -176,10 +176,10 @@ def getReplyKeyBoard(message, action):
                     ],
                     [
                         InlineKeyboardButton(
-                            "👥 Support Group", url=f"{config.get('SUPPORT_GROUP')}"
+                            "👥 Support", url="https://t.me/Beluga_chat"
                         ),
                         InlineKeyboardButton(
-                            "📔 Source Code", url=f"{config.get('GITHUB_REPO')}"
+                            "📔 Updates", url="https://t.me/Zer0ByteOfficial"
                         ),
                     ],
                 ]
@@ -201,7 +201,7 @@ def getReplyKeyBoard(message, action):
                     0,
                     [
                         InlineKeyboardButton(
-                            "🤖 Authorize the bot 🤖",
+                            "Authorize the bot",
                             callback_data=f"authorize-user-bot",
                         ),
                     ],
@@ -218,7 +218,7 @@ def getReplyKeyBoard(message, action):
                     ],
                     [
                         InlineKeyboardButton(
-                            "📔 Source Code", url=f"{config.get('GITHUB_REPO')}"
+                            "📔 Source Code", url="https://t.me/Zer0ByteOfficial"
                         ),
                     ],
                 ]
