@@ -128,7 +128,7 @@ def getMessage(message, action, errorMsg=""):
                 send_message + f"\n• **/help : ** __Shows the available commands.__"
             )
             send_message = (
-                send_message + f"\n\n**__For any issues contact @voicechatsupport__**"
+                send_message + f"\n\n**__For any issues contact @Zer0ByteSupport__**"
             )
             return send_message, getReplyKeyBoard(message, action)
 
